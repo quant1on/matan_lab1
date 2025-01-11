@@ -11,3 +11,9 @@ def dichotomy_search(a: float, b: float, f: tp.Callable, err: float) -> float:
         else:
             a = y_k
     return (a + b) / 2
+
+def find_root(a: float, b: float, f: tp.Callable, err: float) -> float:
+    pass
+
+def find_root_advanced(a: float, b: float, f: tp.Callable, err: float) -> float:
+    pass
