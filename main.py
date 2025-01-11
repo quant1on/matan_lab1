@@ -1,6 +1,6 @@
 import numpy
 import typing as tp
 
-def golden_curve_method(a: float, b: float, f: tp.Callable) -> float:
+def dichotomy_search(a: float, b: float, f: tp.Callable, err: float) -> float:
     pass
 

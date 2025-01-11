@@ -1,7 +1,7 @@
 from main import golden_curve_method
 import unittest
 
-class GetGoldenCurveTestCase(unittest.TestCase):
+class GetDichotomyTestCase(unittest.TestCase):
 
     def test_regular_case(self):
         pass
