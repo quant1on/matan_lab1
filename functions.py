@@ -32,3 +32,9 @@ def func_test_find_root_adv_3(x: float) -> float:
 
 def func_test_find_root_adv_4(x: float) -> float:
     return (-1 * x ** 2) - 1
+
+def func_deviation_test(x: float) -> float:
+    return x * (x - 1) * (x + 3)
+
+def func_plot(x: float) -> float:
+    return x**2
