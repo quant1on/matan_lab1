@@ -23,14 +23,26 @@ def find_root(a: float, b: float, f: tp.Callable, err: float) -> tp.Optional[flo
             b = c
     return (b + a) / 2
 
-def find_root_advanced(a: float, b: float, f: tp.Callable, err: float, part_range: tp.Optional[float] = None) -> tp.List[float]:
+def find_root_advanced(a: float, b: float, f: tp.Callable, err: float,
+                       part_range: tp.Optional[float] = None, err_dichotomy: tp.Optional[float] = None) -> tp.List[float]:
+    
+    def mod_f(x: float):
+        return abs(f(x))
+
     if part_range is None: part_range = err * 100
     roots = []
     a_1 = a
     b_1 = a + part_range
     while b_1 <= b:
-        if f(a_1)*f(b_1) < 0:
+        if f(a_1)*f(b_1) <= 0:
             roots.append(find_root(a_1, b_1, f, err))
+
+        elif not err_dichotomy is None:
+            prediction = dichotomy_search(a=a_1, b=b_1, f=mod_f, err=err)
+
+            if mod_f(prediction) < err_dichotomy:
+                roots.append(prediction)
+
         a_1 = b_1
         b_1 = b_1 + part_range
     return roots

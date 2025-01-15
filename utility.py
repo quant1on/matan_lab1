@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 def find_average_error():
     true_roots = [-3, 0, 1]
-    roots = main.find_root_advanced(a=-5, b=3, f=fnc.func_deviation_test, err=10e-7)
+    roots = sorted(main.find_root_advanced(a=-5, b=3, f=fnc.func_deviation_test, err=10e-7))
     errors = []
     for i in range(3): errors.append(abs(true_roots[i] - roots[i]))
     mean_err = np.std(errors)
